@@ -25,7 +25,7 @@ class TechnicalIndicators:
 
         ma = []
         for i in range(len(prices) - window + 1):
-            ma.append(np.mean(prices[i : i + window]))
+            ma.append(float(np.mean(prices[i : i + window])))
 
         return ma
 
@@ -44,7 +44,7 @@ class TechnicalIndicators:
         if len(prices) < window:
             return []
 
-        ema = [np.mean(prices[:window])]
+        ema = [float(np.mean(prices[:window]))]
         multiplier = 2 / (window + 1)
 
         for price in prices[window:]:
@@ -98,11 +98,12 @@ class TechnicalIndicators:
         if len(prices) < window + 1:
             return []
 
-        deltas = np.diff(prices)
+        prices_arr = np.array(prices)
+        deltas = np.diff(prices_arr)
         seed = deltas[: window + 1]
 
-        up = seed[seed >= 0].sum() / window
-        down = -seed[seed < 0].sum() / window
+        up = float(seed[seed >= 0].sum()) / window
+        down = float(-seed[seed < 0].sum()) / window
 
         rsi = [100.0 if down == 0 else 100.0 - 100.0 / (1.0 + up / down)]
 
