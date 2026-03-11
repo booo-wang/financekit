@@ -33,10 +33,13 @@ jobs:
         run: python -m build
 
       - name: Publish to PyPI
+        if: env.PYPI_API_TOKEN != ''
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           packages-dir: financekit/dist/
           password: ${{ secrets.PYPI_API_TOKEN }}
+        env:
+          PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
