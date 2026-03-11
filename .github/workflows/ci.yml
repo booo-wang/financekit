@@ -32,19 +32,22 @@ jobs:
 
       - name: Lint with flake8
         run: |
-          flake8 financekit/ --max-line-length=120 --extend-ignore=E203 --statistics
+          python -m flake8 financekit/ --max-line-length=120 --extend-ignore=E203 --statistics
 
       - name: Type check with mypy
         run: |
-          mypy financekit/
+          python -m mypy financekit/
 
       - name: Run tests with coverage
         run: |
-          pytest tests/ -v --cov=financekit --cov-report=xml
+          python -m pytest tests/ -v --cov=financekit --cov-report=xml
 
       - name: Upload coverage
-        if: matrix.python-version == '3.11'
+        if: matrix.python-version == '3.11' && env.CODECOV_TOKEN != ''
         uses: codecov/codecov-action@v4
         with:
-          file: ./financekit/coverage.xml
+          files: ./financekit/coverage.xml
           fail_ci_if_error: false
+          token: ${{ secrets.CODECOV_TOKEN }}
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
