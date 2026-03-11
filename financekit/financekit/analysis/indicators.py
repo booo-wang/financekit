@@ -140,13 +140,13 @@ class TechnicalIndicators:
 
         middle = TechnicalIndicators.moving_average(prices, window)
 
-        upper = []
-        lower = []
+        upper: List[float] = []
+        lower: List[float] = []
 
         for i in range(len(prices) - window + 1):
-            std = np.std(prices[i : i + window])
-            upper.append(middle[i] + num_std * std)
-            lower.append(middle[i] - num_std * std)
+            std = float(np.std(prices[i : i + window]))
+            upper.append(float(middle[i] + num_std * std))
+            lower.append(float(middle[i] - num_std * std))
 
         return middle, upper, lower
 
