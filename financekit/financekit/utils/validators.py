@@ -14,8 +14,8 @@ def validate_symbol(symbol: str) -> bool:
     Returns:
         是否有效
     """
-    # 符号应该是1-10个字母或数字
-    return bool(re.match(r'^[A-Za-z0-9]{1,10}$', symbol))
+    # 支持 AAPL, BTC-USD, AAPL.HK 等格式
+    return bool(re.match(r'^[A-Za-z0-9]{1,10}(-[A-Za-z]{1,5})?(\.[A-Za-z]{1,4})?$', symbol))
 
 
 def validate_date_range(start_date: datetime, end_date: datetime) -> Tuple[bool, str]:

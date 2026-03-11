@@ -18,7 +18,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="financekit",
-    version="0.1.0",
+    version="0.2.0",
     author="booo-wang",
     author_email="christinjack_@outlook.com",
     description="A professional financial data crawler and analysis framework",

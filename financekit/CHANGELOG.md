@@ -2,6 +2,17 @@
 
 所有重要的变更都会记录在此。
 
+## [0.2.0] - 2026-03-11
+
+### 修复
+- ✅ 修复 `calculate_statistics` 中 `max_drawdown` 变量名错误 (NameError)
+- ✅ 修复 `validate_symbol` 不支持加密货币符号 (BTC-USD) 和国际股票符号 (AAPL.HK)
+
+### 新增
+- ✅ 添加 mypy 类型检查配置
+- ✅ 添加 GitHub Actions CI 工作流 (flake8 + mypy + pytest，Python 3.8-3.11)
+- ✅ 添加 GitHub Actions Release 工作流 (自动发布到 PyPI)
+
 ## [0.1.0] - 2026-03-08
 
 ### 新增

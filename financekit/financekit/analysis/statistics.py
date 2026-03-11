@@ -131,7 +131,7 @@ class StatisticalAnalysis:
             'avg_daily_return': float(np.mean(returns)) if returns else 0.0,
             'volatility': float(volatility),
             'sharpe_ratio': float(sharpe),
-            'max_drawdown': float(max_drawdown),
+            'max_drawdown': float(max_dd),
             'min_price': float(np.min(closes)),
             'max_price': float(np.max(closes)),
             'avg_price': float(np.mean(closes)),
