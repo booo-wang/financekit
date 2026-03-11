@@ -32,7 +32,7 @@ jobs:
 
       - name: Lint with flake8
         run: |
-          flake8 financekit/ --max-line-length=120 --statistics
+          flake8 financekit/ --max-line-length=120 --extend-ignore=E203 --statistics
 
       - name: Type check with mypy
         run: |
