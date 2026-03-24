@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/booo-wang/financekit)
+[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](https://github.com/booo-wang/financekit)
 
 **FinanceKit** 是一个专业的金融数据爬虫和分析框架，提供高质量的金融数据获取和技术分析功能。
 
@@ -318,7 +318,7 @@ A: 支持美国股市、香港股市等主要市场的股票，以及主流加�
 ## 📮 联系方式
 
 - 问题反馈: [GitHub Issues](https://github.com/booo-wang/financekit/issues)
-- 功能建议: [GitHub Discussions](https://github.com/booo-wang/financekit/discussions)
+- 功能建议: [GitHub Issues (enhancement)](https://github.com/booo-wang/financekit/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
 
 ---
 

@@ -19,9 +19,7 @@ class YahooFinanceCrawler(BaseCrawler):
         super().__init__("Yahoo Finance Crawler")
         self.timeout = 10
 
-    def fetch_stock_data(
-        self, symbol: str, start_date: datetime, end_date: datetime
-    ) -> List[StockData]:
+    def fetch_stock_data(self, symbol: str, start_date: datetime, end_date: datetime) -> List[StockData]:
         """Fetch stock data.
 
         Current implementation returns generated sample data.
@@ -33,9 +31,7 @@ class YahooFinanceCrawler(BaseCrawler):
             logger.error(f"Failed to fetch stock data: {exc}")
             return []
 
-    def fetch_crypto_data(
-        self, symbol: str, start_date: datetime, end_date: datetime
-    ) -> List[CryptoData]:
+    def fetch_crypto_data(self, symbol: str, start_date: datetime, end_date: datetime) -> List[CryptoData]:
         """Fetch crypto data.
 
         Current implementation returns generated sample data.
@@ -48,9 +44,7 @@ class YahooFinanceCrawler(BaseCrawler):
             return []
 
     @staticmethod
-    def _generate_sample_stock_data(
-        symbol: str, start_date: datetime, end_date: datetime
-    ) -> List[StockData]:
+    def _generate_sample_stock_data(symbol: str, start_date: datetime, end_date: datetime) -> List[StockData]:
         """Generate sample stock time-series data."""
         import random
 
@@ -86,9 +80,7 @@ class YahooFinanceCrawler(BaseCrawler):
         return data
 
     @staticmethod
-    def _generate_sample_crypto_data(
-        symbol: str, start_date: datetime, end_date: datetime
-    ) -> List[CryptoData]:
+    def _generate_sample_crypto_data(symbol: str, start_date: datetime, end_date: datetime) -> List[CryptoData]:
         """Generate sample crypto time-series data."""
         import random
 
