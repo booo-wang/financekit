@@ -1,51 +1,27 @@
-"""
-FinanceKit - 金融数据爬虫和分析框架
-高质量的开源金融数据获取和技术分析库
-"""
+"""Public package exports for FinanceKit."""
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __author__ = "booo-wang"
 __license__ = "MIT"
 
-from .crawlers import (
-    BaseCrawler,
-    YahooFinanceCrawler,
-    CryptoCrawler,
-)
-
-from .analysis import (
-    TechnicalIndicators,
-    StatisticalAnalysis,
-    FeatureExtraction,
-)
-
-from .models import (
-    StockData,
-    CryptoData,
-    AnalysisResult,
-    Indicator,
-)
-
+from .analysis import FeatureExtraction, StatisticalAnalysis, TechnicalIndicators
+from .crawlers import BaseCrawler, CryptoCrawler, YahooFinanceCrawler
+from .models import AnalysisResult, CryptoData, Indicator, StockData
 from .storage import DataCache
-from .utils import setup_logger, get_logger
+from .utils import get_logger, setup_logger
 
 __all__ = [
-    # Crawlers
     "BaseCrawler",
     "YahooFinanceCrawler",
     "CryptoCrawler",
-    # Analysis
     "TechnicalIndicators",
     "StatisticalAnalysis",
     "FeatureExtraction",
-    # Models
     "StockData",
     "CryptoData",
     "AnalysisResult",
     "Indicator",
-    # Storage
     "DataCache",
-    # Utils
     "setup_logger",
     "get_logger",
 ]

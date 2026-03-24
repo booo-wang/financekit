@@ -44,6 +44,43 @@ class TestTechnicalIndicators:
         assert len(signal_line) > 0
         assert len(histogram) > 0
 
+    def test_atr(self):
+        """测试ATR"""
+        highs = [p + 1 for p in self.prices]
+        lows = [p - 1 for p in self.prices]
+        atr = TechnicalIndicators.atr(highs, lows, self.prices, 14)
+        assert len(atr) > 0
+        assert all(a > 0 for a in atr)
+
+    def test_atr_insufficient_data(self):
+        """测试ATR数据不足"""
+        assert TechnicalIndicators.atr([1], [0], [0.5], 14) == []
+
+    def test_cci(self):
+        """测试CCI"""
+        highs = [p + 1 for p in self.prices]
+        lows = [p - 1 for p in self.prices]
+        cci = TechnicalIndicators.cci(highs, lows, self.prices, 20)
+        assert len(cci) > 0
+        assert all(isinstance(c, float) for c in cci)
+
+    def test_cci_insufficient_data(self):
+        """测试CCI数据不足"""
+        assert TechnicalIndicators.cci([1, 2], [0, 1], [0.5, 1.5], 20) == []
+
+    def test_kdj(self):
+        """测试KDJ"""
+        highs = [p + 1 for p in self.prices]
+        lows = [p - 1 for p in self.prices]
+        k, d, j = TechnicalIndicators.kdj(highs, lows, self.prices)
+        assert len(k) > 0
+        assert len(k) == len(d) == len(j)
+
+    def test_kdj_insufficient_data(self):
+        """测试KDJ数据不足"""
+        k, d, j = TechnicalIndicators.kdj([1, 2], [0, 1], [0.5, 1.5])
+        assert k == [] and d == [] and j == []
+
 
 class TestStatisticalAnalysis:
     """统计分析测试"""

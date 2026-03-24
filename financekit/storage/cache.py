@@ -10,7 +10,7 @@ import hashlib
 class DataCache:
     """简单的数据缓存类"""
 
-    def __init__(self, cache_dir: Path = None, ttl_hours: int = 24):
+    def __init__(self, cache_dir: Optional[Path] = None, ttl_hours: int = 24):
         """
         初始化缓存
 

@@ -5,10 +5,6 @@ on:
     tags:
       - "v*"
 
-defaults:
-  run:
-    working-directory: financekit
-
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -36,7 +32,7 @@ jobs:
         if: env.PYPI_API_TOKEN != ''
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: financekit/dist/
+          packages-dir: dist/
           password: ${{ secrets.PYPI_API_TOKEN }}
         env:
           PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
@@ -45,4 +41,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          files: financekit/dist/*
+          files: dist/*

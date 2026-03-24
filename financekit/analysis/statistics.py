@@ -69,7 +69,7 @@ class StatisticalAnalysis:
         if volatility == 0:
             return 0.0
 
-        return (avg_return - risk_free_rate / 252) / volatility * np.sqrt(252)
+        return float((avg_return - risk_free_rate / 252) / volatility * np.sqrt(252))
 
     @staticmethod
     def calculate_max_drawdown(prices: List[float]) -> Tuple[float, int, int]:
